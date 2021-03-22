@@ -1,5 +1,9 @@
-.navigation-header {
+.page-header {
     background-color: $brand-color-primary;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
 
 
     .container {

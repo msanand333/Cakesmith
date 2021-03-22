@@ -1,0 +1,26 @@
+%btn{
+    padding: 10px 10px;
+    border-radius: 0px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.btn{
+    //White button
+    &-primary{
+        @extend %btn;
+        background-color:$btn-primary-bg ;
+        color: $btn-primary-txt;
+
+    }
+
+    //Black button
+    &-secondary{
+        @extend %btn;
+        background-color:$btn-secondary-bg ;
+        color: $btn-secondary-txt;
+    
+    }
+
+}

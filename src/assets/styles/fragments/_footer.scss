@@ -1,0 +1,77 @@
+.page-footer {
+    background-color: $brand-color-secondary;
+    color:$txt-color-secondary;
+    font-size: 14px;
+position: relative;
+z-index: 2;
+    .container {
+        padding: 50px 15px;
+        display: flex;
+        align-items: top;
+
+        a{
+            color:$txt-color-secondary;
+            text-decoration:none;
+            font-size: 14px;
+            letter-spacing: 0.7px;
+        }
+
+        .links {
+            width: 30%;
+            li{
+                margin-bottom: 15px;
+            }
+        }
+
+        .contact {
+            width: 30%;
+            li{
+                margin-bottom: 15px;
+                &.social-media-links{
+                    a{
+                        margin-right:20px; ;
+                        svg{
+                            width: 15px;
+                            height: auto;
+                            vertical-align: middle;
+                            path{
+                                fill: $txt-color-secondary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .newsletter {
+            width: 40%;
+
+            P{
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            input{
+                width: calc(100% - 100px);
+                border:2px solid $border-primary;
+                background-color: $brand-color-secondary;
+                border-radius: 0;
+                padding: 10px 20px;
+                margin-right: 10px;
+                outline: none;
+                color: $txt-color-secondary;
+                font-size: 14px;
+
+                &::placeholder{
+                    color: $txt-color-secondary;
+                    font-size: 14px;
+                }
+
+            }
+            .btn-primary{
+                font-size: 14px;
+                padding: 13px 20px;
+            }
+        }
+    }
+
+}

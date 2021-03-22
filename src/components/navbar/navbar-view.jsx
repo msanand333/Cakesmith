@@ -4,7 +4,7 @@ import PageNavigator from './page-navigator';
 
 const NavbarView = () => {
     return (
-        <header className="navigation-header">
+        <header className="page-header">
             <div className="container">
                 <a className="brand-logo" href="/">
                     <BrandLogo />
