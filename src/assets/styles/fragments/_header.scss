@@ -1,0 +1,77 @@
+.navigation-header {
+    background-color: $brand-color-primary;
+
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+
+
+        .brand-logo {
+            svg {
+                width: 150px;
+                height: auto;
+            }
+        }
+
+        nav {
+            a {
+                color: $txt-color-primary;
+                text-decoration: none;
+                margin-right: 30px;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -4px;
+                    height: 2px;
+                    width: 100%;
+                    left: 0;
+                    max-width: 0;
+                    background-color: $txt-color-primary;
+                    transition: max-width 0.2s ease-in-out;
+                }
+
+                &:hover{
+                    &::after{
+                        max-width: 100%;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                    position: relative;
+
+                    &::after{
+                        content: none;
+                    }
+                    svg{
+                        width: 18px;
+                        height: auto;
+                        vertical-align: middle;
+                    }
+
+                    code{
+                        position: absolute;
+                        line-height: 16px;
+                        width: 16px;
+                        background-color: $blue;
+                        color: $txt-color-secondary;
+                        border-radius: 50%;
+                        font-size: 8px;
+                        top: -7px;
+                        right: -7px;
+                        text-align: center;
+
+                    }
+
+                }
+            }
+        }
+    }
+
+
+
+}

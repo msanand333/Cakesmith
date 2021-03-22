@@ -1,21 +1,18 @@
 import React from 'react'
-import {ReactComponent as BrandLogo} from '../../assets/images/svg/Logo-WithTagline.svg';
+import { ReactComponent as BrandLogo } from '../../assets/images/svg/Logo-WithTagline.svg';
+import PageNavigator from './page-navigator';
 
-
-const NavbarView = ()=>{
+const NavbarView = () => {
     return (
-        <header>
-            <a className="brand" href=""> 
-            <BrandLogo/>
-            </a>
-            <nav>
-              <a href=""> Home</a>
-              <a href=""> Shop</a>
-              <a href=""> About</a>
-              <a href=""> Contact</a>
-              <a href=""> Cart</a>
+        <header className="navigation-header">
+            <div className="container">
+                <a className="brand-logo" href="/">
+                    <BrandLogo />
+                </a>
+                <PageNavigator/>
+              
+            </div>
 
-            </nav>
         </header>
     )
 }
