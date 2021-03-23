@@ -13,6 +13,10 @@
         background-color:$btn-primary-bg ;
         color: $btn-primary-txt;
 
+        &:hover{
+            box-shadow: 4px 4px 4px 2px rgba(255, 255, 255, 0.2);
+        }
+
     }
 
     //Black button
@@ -20,7 +24,11 @@
         @extend %btn;
         background-color:$btn-secondary-bg ;
         color: $btn-secondary-txt;
+        &:hover{
+            box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+        }
     
     }
+
 
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import heroBg from '../../assets/images/jpg/home-hero-bg.jpg';
 import { ProductCard } from '../../components/product-card';
+import { Link } from 'react-router-dom'
 
 const HomePageView = () => {
     return (
@@ -10,7 +11,10 @@ const HomePageView = () => {
                 <div className="content">
                     <h1>Cakesmith Welcomes You </h1>
                     <h4>Freshly Baked Goodness You Can't Resist</h4>
-                    <button className="btn-secondary">Shop Now</button>
+                    <Link to='/shop'>
+                        <button className="btn-secondary">Shop Now</button>
+                    </Link>
+
                 </div>
 
             </section>
@@ -18,9 +22,9 @@ const HomePageView = () => {
                 <div className="container">
                     <h3>Featured Items</h3>
                     <ul className="content">
-                    <ProductCard/>
-                     <ProductCard/>
-                     <ProductCard/>
+                        <ProductCard />
+                        <ProductCard />
+                        <ProductCard />
                     </ul>
                 </div>
 
@@ -37,7 +41,7 @@ const HomePageView = () => {
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Similique quaerat magni odio sapiente placeat commodi
                     voluptates quibusdam animi minima, dicta alias quidem
-                    repellat cum ut distinctio aspernatur excepturi 
+                    repellat cum ut distinctio aspernatur excepturi
                     itaque quasi.</p>
                 </div>
             </section>

@@ -27,6 +27,7 @@
                 text-decoration: none;
                 margin-right: 30px;
                 position: relative;
+                cursor: pointer;
                 &::after{
                     content: "";
                     position: absolute;
@@ -69,6 +70,7 @@
                         top: -7px;
                         right: -7px;
                         text-align: center;
+                        padding-top: 1px;
 
                     }
 

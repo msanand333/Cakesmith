@@ -1,10 +1,9 @@
 import React from 'react'
 import blackForest from '../../assets/images/cakes/black-forest.jpeg';
-import {Counter} from '../counter';
 const ProductCardView = () => {
     return (
         <li className="product-card">
-            <a href="javascript:void(0)">
+           
                 <figure>
                     <img src={blackForest} alt="Cake Name" />
                 </figure>
@@ -15,10 +14,10 @@ const ProductCardView = () => {
                         <span className="product-price">&#8377;500</span>
                     </li>
                     <li className="quantity">
-                        <Counter/>
+                        <button className="btn-secondary">Add to cart</button>
                     </li>
                 </ul>
-            </a>
+            
         </li>
 
     )

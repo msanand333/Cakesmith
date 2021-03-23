@@ -1,14 +1,21 @@
 import React from 'react'
-import {ReactComponent as CartIcon} from '../../assets/images/svg/shopping-cart.svg';
-
+import { ReactComponent as CartIcon } from '../../assets/images/svg/shopping-cart.svg';
+import { Link } from 'react-router-dom';
 const PageNavigator = () => {
     return (
         <nav>
-            <a href=""> Home</a>
-            <a href=""> Shop</a>
-            <a href=""> Login</a>
-            <a href=""> My Profile</a>
-            <a href=""> <CartIcon/> <code>1</code></a>
+            <Link to='/'>
+                <a > Home</a>
+            </Link>
+            <Link to='/shop'>
+                <a > Shop</a>
+            </Link>
+            <Link to='/login'>
+                <a > Login</a>
+            </Link>
+            <Link to='/cart'>
+                <a > <CartIcon /> <code>1</code></a>
+            </Link>
         </nav>
     )
 }

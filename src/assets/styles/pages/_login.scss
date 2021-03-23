@@ -1,0 +1,26 @@
+.login-page{
+    padding: 200px 50px;
+    height: 100vh;
+    text-align: center;
+    
+    .login-btn{
+        border: 1px solid #e3e3e3;
+        padding: 15px 30px;
+        @include alignCenter;
+        border-radius: 200px;
+        font-weight: $roboto-medium;
+
+        &:hover{
+             box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        
+
+        svg{
+            vertical-align: middle;
+            width: 20px ;
+            height: auto;
+            margin-left: 10px;
+        }
+    }
+}
