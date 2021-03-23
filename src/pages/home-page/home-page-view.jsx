@@ -1,13 +1,14 @@
 import React from 'react';
 import heroBg from '../../assets/images/jpg/home-hero-bg.jpg';
-import { ReactComponent as BrandLogo } from '../../assets/images/svg/Logo-WithTagline.svg';
+import { ProductCard } from '../../components/product-card';
+
 const HomePageView = () => {
     return (
         <main className="home-page">
             <img className="bg-img" src={heroBg} alt="Hero" />
             <section className="hero-section">
                 <div className="content">
-                    <h1>Cakessmith Welcomes You </h1>
+                    <h1>Cakesmith Welcomes You </h1>
                     <h4>Freshly Baked Goodness You Can't Resist</h4>
                     <button className="btn-secondary">Shop Now</button>
                 </div>
@@ -16,17 +17,10 @@ const HomePageView = () => {
             <section className="featured-items">
                 <div className="container">
                     <h3>Featured Items</h3>
-                    <ul>
-                        <li>
-                            <a href="">
-                                <figure>
-                                    <img src="" alt="" />
-                                </figure>
-                                <div>
-
-                                </div>
-                            </a>
-                        </li>
+                    <ul className="content">
+                    <ProductCard/>
+                     <ProductCard/>
+                     <ProductCard/>
                     </ul>
                 </div>
 

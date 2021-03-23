@@ -1,0 +1,26 @@
+.counter{
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    align-items: center;
+    button{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        border: none;
+        background-color: $btn-secondary-bg;
+        color: $btn-secondary-txt;
+        font-size: 10px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+    }
+    span{
+        width: 24px;
+        font-size: 14px;
+        text-align: center;
+        border: 1px solid #000;
+        line-height: 20px;
+       
+    }
+}

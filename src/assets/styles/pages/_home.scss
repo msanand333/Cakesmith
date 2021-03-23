@@ -50,15 +50,29 @@
         padding: 75px ;
         min-height: 600px;
 
+  
+
         .container{
             text-align: center;
+
+            h3{
+                margin-bottom: 50px;
+                font-weight: $roboto-medium;
+            }
+
+            .content{
+                display: flex;
+                justify-content: center;
+                li{
+                    margin: 0 10px;
+                }
+            }
         }
     }
 
     .about{
         background-color: $brand-color-primary;
         padding: 75px ;
-        min-height: 600px;
         .container{
             text-align: center;
             h3{
