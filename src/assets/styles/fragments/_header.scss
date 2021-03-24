@@ -15,8 +15,8 @@
 
 
         .brand-logo {
-            svg {
-                width: 150px;
+            img {
+                width: 120px;
                 height: auto;
             }
         }
@@ -36,7 +36,7 @@
                     width: 100%;
                     left: 0;
                     max-width: 0;
-                    background-color: $txt-color-primary;
+                    background-color: $brand-color-secondary;
                     transition: max-width 0.2s ease-in-out;
                 }
 
@@ -57,6 +57,9 @@
                         width: 18px;
                         height: auto;
                         vertical-align: middle;
+                        path{
+                            fill:$txt-color-primary ;
+                        }
                     }
 
                     code{

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as BrandLogo } from '../../assets/images/svg/Logo-WithTagline.svg';
+import BrandLogo  from '../../assets/images/jpg/brand-logo.jpg';
 import PageNavigator from './page-navigator';
 
 const NavbarView = () => {
@@ -7,7 +7,7 @@ const NavbarView = () => {
         <header className="page-header">
             <div className="container">
                 <a className="brand-logo" href="/">
-                    <BrandLogo />
+                    <img src={BrandLogo} alt=""/>
                 </a>
                 <PageNavigator/>
               

@@ -1,0 +1,132 @@
+.cart-page {
+    padding: 150px 50px;
+
+    h3 {
+        text-align: center;
+        margin-bottom: 20px;
+
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+
+        .item-details {
+            width: calc(100% - 400px);
+
+            ul {
+                display: flex;
+                align-items: flex-start;
+
+                &.label {
+                    background-color: $grey;
+                    border: 1px solid $darkGrey;
+                    padding: 15px 10px;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    li {
+                        font-weight: $roboto-medium;
+                    }
+
+                }
+
+                &.info {
+                    padding: 15px 10px;
+
+                    li {
+                        padding-right: 10px;
+
+                        &.image {
+                            padding-right: 20px;
+
+                        }
+                    }
+                }
+
+
+
+                .image {
+                    width: 15%;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        border-radius: 5px;
+                    }
+                }
+
+                .description {
+                    width: 35%;
+                    @include truncate;
+
+                    p {}
+                }
+
+                .quantity {
+                    width: 25%;
+                }
+
+                .delete {
+                    width: 10%;
+
+                    i {
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        width: 20px;
+                        height: auto;
+                        vertical-align: middle;
+
+                        &:hover {
+                            path {
+                                fill: $btn-secondary-bg
+                            }
+                        }
+                    }
+                }
+
+                .price {
+                    width: 15%;
+                }
+
+            }
+
+        }
+
+        .price-details {
+            width: 350px;
+            background-color: $grey;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            .container{
+               padding: 15px;
+                border:1px solid $darkGrey;
+
+                .total-amount{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 20px;
+                    border-bottom: 1px dotted $darkGrey;
+                    font-weight: $roboto-bold;
+                }
+
+                .checkout-btn{
+                    padding: 20px 0;
+                    .btn-secondary{
+                        width: 100%;
+                        padding: 15px;
+                    }
+                }
+
+            }
+
+           
+
+        }
+    }
+}
