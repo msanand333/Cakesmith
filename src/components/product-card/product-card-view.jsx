@@ -1,6 +1,26 @@
 import React from 'react'
+import classNames from 'classnames'
 import blackForest from '../../assets/images/cakes/black-forest.jpeg';
+import { useState } from 'react/cjs/react.development';
 const ProductCardView = () => {
+    let isLoggedIn = true;
+    const [isAdded,setIsAdded]=useState(false)
+    const addToCart =()=>{
+        if(isLoggedIn){
+            setIsAdded(!isAdded)
+        }
+        else{
+            alert('please login to continue')
+        }
+       
+    }
+    const cx = classNames(
+        'btn-secondary',{
+            'added':isAdded
+        }
+    )
+
+
     return (
         <li className="product-card">
            
@@ -14,7 +34,8 @@ const ProductCardView = () => {
                         <span className="product-price">&#8377;500</span>
                     </li>
                     <li className="quantity">
-                        <button className="btn-secondary">Add to cart</button>
+                        <button onClick={addToCart} className={cx}>
+                            {isAdded ? 'Remove from cart':'Add to cart' }</button>
                     </li>
                 </ul>
             
