@@ -14,6 +14,11 @@
         .item-details {
             width: calc(100% - 400px);
 
+            .container{
+                height: calc(100vh - 320px);
+                overflow: auto;
+            }
+
             ul {
                 display: flex;
                 align-items: flex-start;
@@ -30,6 +35,8 @@
                     }
 
                 }
+
+              
 
                 &.info {
                     padding: 15px 10px;

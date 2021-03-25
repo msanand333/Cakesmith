@@ -1,0 +1,156 @@
+.payment-page {
+    height: 100vh;
+    position: relative;
+
+    .checkout-details {
+        @include alignCenter;
+        top: 55%;
+        width: 500px;
+        padding: 40px 20px;
+        box-shadow: 2px 8px 19px -8px rgba(0, 0, 0, 0.75);
+
+        h3 {
+            text-align: center;
+            font-weight: $roboto-medium;
+            margin-bottom: 20px;
+        }
+
+
+        .form {
+            padding-bottom: 30px;
+
+            ul {
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                &.stages {
+                    display: block;
+                    text-align: center;
+
+                    li {
+                        display: inline-block;
+                        padding: 10px 10px 10px 25px;
+                        font-size: 15px;
+                        margin-bottom: 20px;
+                        position: relative;
+                        white-space: nowrap;
+                        text-transform: capitalize;
+
+                        &::before {
+
+                            position: absolute;
+                            left: -10px;
+                            top: 2px;
+                            background-color: $brand-color-secondary;
+                            color: $txt-color-secondary;
+                            font-size: 10px;
+                            line-height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            text-align: center;
+                        }
+
+                        &.stage-one {
+                            &::before {
+                                content: "1/2";
+                            }
+
+                        }
+
+                        &.stage-two {
+                            &::before {
+                                content: "2/2";
+                            }
+
+                        }
+                    }
+                }
+
+
+
+                .input-wrapper {
+                    width: calc((100% - 20px)/2);
+
+                    label {
+                        font-size: 12px;
+                        margin-bottom: 5px;
+                        display: inline-block;
+                        color: $txt-color-primary;
+                        font-style: italic;
+                        text-transform: capitalize;
+                    }
+
+                    input {
+                        border-width: 0px 0px 1px 0;
+                        outline: none;
+                        width: 100%;
+                        margin-bottom: 3px;
+                        font-size: 14px;
+                        padding: 3px;
+
+
+                        &.error {
+                            border-color: $red;
+
+                            &+.error-msg {
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    .error-msg {
+                        visibility: hidden;
+                        font-size: 12px;
+                        color: $red
+                    }
+                }
+            }
+
+            .action-btn-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+
+                .btn-secondary {
+                    margin: 0 15px;
+                }
+            }
+
+            &.card-details {
+
+                ul {
+                    li {
+                        &.card-number {
+                            width: 100%;
+                        }
+
+                        &.expiry {
+                            width: 15%;
+                        }
+
+                        &.cvv {
+                            width: 10%;
+                        }
+
+                        label {
+                            text-transform: uppercase;
+                        }
+                    }
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { ItemInfo } from '../../components/item-info';
+import {Link} from 'react-router-dom'
 
 const CartPageView = () => {
     return (
@@ -16,6 +17,8 @@ const CartPageView = () => {
                     </ul>
                     <div className="container">
                         <ItemInfo />
+                        <ItemInfo />
+                 
                     </div>
                 </div>
                 <div className="price-details">
@@ -24,7 +27,10 @@ const CartPageView = () => {
                             <span>Grand Total</span> <span>&#8377;500</span>
                         </li>
                         <li className="checkout-btn">
+                            <Link to='/payment'>
                             <button className="btn-secondary">Checkout</button>
+                            </Link>
+                         
                         </li>
 
                     </ul>
