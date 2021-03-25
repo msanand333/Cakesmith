@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import blackForest from '../../assets/images/cakes/black-forest.jpeg';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 const ProductCardView = () => {
     let isLoggedIn = true;
     const [isAdded,setIsAdded]=useState(false)
