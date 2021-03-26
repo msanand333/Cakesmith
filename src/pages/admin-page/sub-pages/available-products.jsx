@@ -13,6 +13,7 @@ const AvailableProducts = () => {
             </div>
 
             <div className="item-details">
+            <h3> Existing Products</h3>
                 <ul className="label">
                     <li className="image">Image</li>
                     <li className="description">Description</li>
