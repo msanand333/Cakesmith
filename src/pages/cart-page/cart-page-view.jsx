@@ -16,23 +16,23 @@ const CartPageView = () => {
                         <li className="delete">Delete</li>
                     </ul>
                     <div className="container">
-                        <ItemInfo />
-                        <ItemInfo />
-                 
+                        <ItemInfo type="cart" /> 
+                        <ItemInfo type="edit"/>
+                        <ItemInfo type="available"/>
+                        <ItemInfo type="placed-order"/>
+                        <ItemInfo type="received-order"/>
                     </div>
                 </div>
                 <div className="price-details">
                     <ul className="container">
                         <li className ="total-amount">
-                            <span>Grand Total</span> <span>&#8377;500</span>
+                            <span>Grand Total</span><span>&#8377;500</span>
                         </li>
                         <li className="checkout-btn">
                             <Link to='/payment'>
                             <button className="btn-secondary">Checkout</button>
                             </Link>
-                         
                         </li>
-
                     </ul>
                 </div>
             </section>

@@ -9,10 +9,11 @@ import { CartPage } from './pages/cart-page';
 import { PaymentPage } from './pages/payment-page';
 import { AdminPage } from './pages/admin-page';
 import { LoginPage } from './pages/login-page';
+import { ProfilePage } from './pages/profile-page';
 
 const App = () => {
   return (
-    
+
     <Router>
       <div>
         <Navbar />
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/cart' component={CartPage} />
           <Route path='/payment' component={PaymentPage} />
           <Route path='/admin' component={AdminPage} />
+          <Route path='/profile' component={ProfilePage}/>
           <Route path='/login' component={LoginPage} />
         </Switch>
         <Footer />

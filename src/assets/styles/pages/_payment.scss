@@ -67,43 +67,9 @@
                     }
                 }
 
-
-
                 .input-wrapper {
                     width: calc((100% - 20px)/2);
 
-                    label {
-                        font-size: 12px;
-                        margin-bottom: 5px;
-                        display: inline-block;
-                        color: $txt-color-primary;
-                        font-style: italic;
-                        text-transform: capitalize;
-                    }
-
-                    input {
-                        border-width: 0px 0px 1px 0;
-                        outline: none;
-                        width: 100%;
-                        margin-bottom: 3px;
-                        font-size: 14px;
-                        padding: 3px;
-
-
-                        &.error {
-                            border-color: $red;
-
-                            &+.error-msg {
-                                visibility: visible;
-                            }
-                        }
-                    }
-
-                    .error-msg {
-                        visibility: hidden;
-                        font-size: 12px;
-                        color: $red
-                    }
                 }
             }
 
@@ -136,21 +102,38 @@
                         label {
                             text-transform: uppercase;
                         }
+                        
                     }
 
                 }
 
             }
 
+        }
 
+        .payment-ack {
+            position: relative;
+            height: 200px;
+
+            .content {
+                @include alignCenter;
+                width: 100%;
+                text-align: center;
+
+                svg {
+                    width: 50px;
+                    height: auto;
+                }
+
+                h4 {
+                    font-weight: $roboto-medium;
+                    margin-top: 25px;
+                }
+
+            }
 
         }
 
-
-
-
-
     }
-
 
 }

@@ -5,16 +5,22 @@ const PageNavigator = () => {
     return (
         <nav>
             <Link to='/'>
-                <a > Home</a>
+               Home
             </Link>
             <Link to='/shop'>
-                <a > Shop</a>
+                Shop
             </Link>
             <Link to='/login'>
-                <a > Login</a>
+                 Login
+            </Link>
+            <Link to='/profile'>
+             Profile
+            </Link>
+            <Link to='/admin'>
+                Admin Panel
             </Link>
             <Link to='/cart'>
-                <a > <CartIcon /> <code>1</code></a>
+                <CartIcon /> <code>1</code>
             </Link>
         </nav>
     )

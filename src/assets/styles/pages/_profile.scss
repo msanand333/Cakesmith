@@ -1,4 +1,4 @@
-.admin-page{
+.profile-page{
     @include clearfix;
 
     .wrapper{
@@ -10,12 +10,6 @@
         .item-details{
             width: 80%;
             margin:0 auto;
-            &.add-product{
-                margin-bottom: 50px;
-                .container{
-                    height: auto;
-                }
-            }
         }
     }
 
