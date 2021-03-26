@@ -17,6 +17,7 @@ const CartPageView = () => {
                     </ul>
                     <div className="container">
                         <ItemInfo type="cart" /> 
+                        {/** OTHER WAYS TO USE THE ITEM INFO COMPONENT */}
                         <ItemInfo type="edit"/>
                         <ItemInfo type="available"/>
                         <ItemInfo type="placed-order"/>
