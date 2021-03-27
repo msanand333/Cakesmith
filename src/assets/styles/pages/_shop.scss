@@ -2,13 +2,13 @@
     .products{
         display: flex;
         flex-wrap: wrap;
-        justify-content:space-between;
+        justify-content:center;
         padding: 100px 50px;
         // height: 100vh;
         overflow: auto;
 
         .product-card{
-           margin-bottom: 30px;
+            margin: 0 15px 30px;
         }
     }
 }

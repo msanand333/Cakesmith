@@ -16,7 +16,7 @@ const PageNavigator = () => {
             <Link to='/profile'>
              Profile
             </Link>
-            <Link to='/admin'>
+            <Link to='/admin/order'>
                 Admin Panel
             </Link>
             <Link to='/cart'>

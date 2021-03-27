@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <aside className="sidebar">
             <ul>
                 <li>
-                    <Link  to='/admin'>
+                    <NavLink  to='/admin/order' activeClassName="selected">
                         View Orders
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link  to='/admin/available-products'>
+                    <NavLink to='/admin/available-products' activeClassName="selected">
                         Available products
-                    </Link>
+                    </NavLink>
                 </li>
 
             </ul>

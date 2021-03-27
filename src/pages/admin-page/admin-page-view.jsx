@@ -10,7 +10,7 @@ const AdminPageView = () => {
             <Sidebar />
             <section className="wrapper">
                 <Switch>
-                    <Route path='/admin' exact component={ReceivedOrders} />
+                    <Route path='/admin/order' exact component={ReceivedOrders} />
                     <Route path='/admin/available-products' component={AvailableProducts} />
                 </Switch>
             </section>
