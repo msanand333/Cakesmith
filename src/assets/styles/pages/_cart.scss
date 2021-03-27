@@ -1,5 +1,5 @@
 .cart-page {
-    padding: 150px 50px;
+    padding: 50px 50px;
 
     h3 {
         text-align: center;
@@ -11,96 +11,7 @@
         display: flex;
         justify-content: space-between;
 
-        .item-details {
-            width: calc(100% - 400px);
-
-            .container{
-                height: calc(100vh - 320px);
-                overflow: auto;
-            }
-
-            ul {
-                display: flex;
-                align-items: center;
-
-                &.label {
-                    background-color: $grey;
-                    border: 1px solid $darkGrey;
-                    padding: 15px 10px;
-                    align-items: center;
-                    margin-bottom: 20px;
-
-                    li {
-                        font-weight: $roboto-medium;
-                    }
-
-                }
-
-              
-
-                &.info {
-                    padding: 15px 10px;
-
-                    li {
-                        padding-right: 10px;
-
-                        &.image {
-                            padding-right: 20px;
-
-                        }
-                    }
-                }
-
-
-
-                .image {
-                    width: 15%;
-
-                    img {
-                        width: 100%;
-                        height: auto;
-                        border-radius: 5px;
-                    }
-                }
-
-                .description {
-                    width: 35%;
-                    @include truncate;
-
-                    p {}
-                }
-
-                .quantity {
-                    width: 25%;
-                }
-
-                .delete {
-                    width: 10%;
-
-                    i {
-                        cursor: pointer;
-                    }
-
-                    svg {
-                        width: 20px;
-                        height: auto;
-                        vertical-align: middle;
-
-                        &:hover {
-                            path {
-                                fill: $btn-secondary-bg
-                            }
-                        }
-                    }
-                }
-
-                .price {
-                    width: 15%;
-                }
-
-            }
-
-        }
+     
 
         .price-details {
             width: 350px;

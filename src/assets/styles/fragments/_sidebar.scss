@@ -1,0 +1,26 @@
+.sidebar{
+    height: calc(100vh - 123px);
+    width: 300px;
+    border-right: 1px solid $grey;
+    float: left;
+    padding: 25px 0 0 0;
+    // box-shadow: 10px 1px 12px -9px rgba(0,0,0,0.75);
+
+    a{
+        display: block;
+        text-decoration: none;
+        border-bottom: 1px solid $grey;
+        padding: 15px 20px;
+        color: $txt-color-primary;
+        font-weight: $roboto-medium;
+
+        &:hover{
+            color: $brand-color-secondary;
+        }
+
+        &.selected{
+            color: $brand-color-secondary;
+        }
+
+    }
+}

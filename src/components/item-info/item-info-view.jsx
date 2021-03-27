@@ -1,26 +1,36 @@
 import React from 'react'
-import BlackForest from '../../assets/images/cakes/black-forest.jpeg';
-import { Counter } from '../../components/counter';
-import { ReactComponent as TrashIcon } from '../../assets/images/svg/trash.svg'
+import CartItemInfo from './cart-itemInfo';
+import EditItemInfo from './edit-itemInfo';
+import AvailableItemInfo from './available-itemInfo';
+import PlacedOrderItemInfo from './placedOrder-itemInfoView';
+import ReceivedOrderItemInfo from './receivedOrder-itemInfo';
+const ItemInfoView = (props) => {
+    if (props.type === "cart") {
+        return (
+            <CartItemInfo />
+        )
+    }
+    else if (props.type === "edit") {
+        return (
+            <EditItemInfo />
+        )
+    }
+    else if (props.type === "available") {
+        return (
+            <AvailableItemInfo />
+        )
+    }
+    else if (props.type === "placed-order") {
+        return (
+            <PlacedOrderItemInfo />
+        )
+    }
+    else if (props.type === "received-order") {
+        return (
+            <ReceivedOrderItemInfo />
+        )
+    }
 
-const ItemInfoView = () => {
-    return (
-        <ul className="info">
-            <li className="image">
-                <img src={BlackForest} alt="Black forest" />
-            </li>
-            <li className="description">
-                <p> Black forest cake</p>
-            </li>
-            <li className="quantity"><Counter /></li>
-            <li className="price">&#8377;500</li>
-            <li className="delete">
-                <i>
-                    <TrashIcon />
-                </i>
-            </li>
-        </ul>
-    )
 }
 
 export default ItemInfoView

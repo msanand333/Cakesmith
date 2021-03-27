@@ -1,0 +1,17 @@
+.profile-page{
+    @include clearfix;
+
+    .wrapper{
+        padding: 20px;
+        width: calc(100% - 300px);
+        height: calc(100vh - 123px);
+        overflow: auto;
+
+        .item-details{
+            width: 80%;
+            margin:0 auto;
+        }
+    }
+
+
+}
