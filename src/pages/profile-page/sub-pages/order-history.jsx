@@ -1,7 +1,20 @@
+import { useAuth } from 'js/firebase';
+import orderService from 'js/order-service';
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 import {ItemInfo} from '../../../components/item-info';
 
 const OrderHistory = () => {
+        const[user] = useAuth()
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        if(!user?.uid) return;
+        orderService.getPastOrder(user.uid).then((orders) => {
+            setProducts(orders)
+        })
+    }, [user])
     return (
         <div className="order-history">
             <div className="item-details">
@@ -13,13 +26,11 @@ const OrderHistory = () => {
                     <li className="delete">Delete</li>
                 </ul>
                 <div className="container">
-
-                    <ItemInfo type="placed-order" />
-                    <ItemInfo type="placed-order" />
-                    <ItemInfo type="placed-order" />
-                    <ItemInfo type="placed-order" />
-                    <ItemInfo type="placed-order" />
-                    <ItemInfo type="placed-order" />
+                {
+                    products.map((product) => (
+                        <ItemInfo type="placed-order" product={product}/>
+                    ))
+                }
 
                 </div>
             </div>

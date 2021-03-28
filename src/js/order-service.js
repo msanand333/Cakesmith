@@ -9,7 +9,6 @@ export const ORDER_STATUS = {
   PREPARING: 'preparing',
   DELIVERED: 'delivered',
 }
-
 class OrderService {
 
   createDocumentDataFromProducts(orderInfo, userInfo){
@@ -42,6 +41,24 @@ class OrderService {
   async createOrder(orderInfo, userInfo){
     await this.creatOrderUnderUser(orderInfo, userInfo);
     await this.changeItemsInInventory(orderInfo);
+  }
+
+  getOrders = async (userId, archived) => {
+    const snap = await ref().orders.where('placedUserId', '==', userId).where('archived', '==', archived).get()
+    const orders = snap.docs.reduce((pre ,order) => {
+        let {products, status} = order.data()
+        products = products.map((product) => ({...product, status}))
+        return [...pre, ...products]
+    }, [])
+    return orders
+  }
+
+  async getCurrentOrder(userId){
+    return this.getOrders(userId, false)
+  }
+
+  async getPastOrder(userId){
+    return this.getOrders(userId, true)
   }
 }
 

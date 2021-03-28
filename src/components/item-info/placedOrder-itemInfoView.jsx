@@ -2,19 +2,17 @@ import React from 'react'
 import Img from './sub-components/img'
 import Description from './sub-components/description'
 
-const PlacedOrderItemInfo = () => {
+const PlacedOrderItemInfo = ({ product }) => {
     return (
         <ul className="info">
-            <Img/>
-            <Description/>
-            <li className="quantity">5</li>
+            <Img src={product.imgUrl}/>
+            <Description text={product.name}/>
+            <li className="quantity">{product.quantity}</li>
             <li className="price">
-            &#8377;500
+            &#8377;{product.total}
             </li>
             <li className="modify status">
-                <p className="success">Accepted</p>
-                <p className="failed">Preparing</p>
-                <p className="success">Delivered</p>
+                <p className="success">{product.status}</p>
             </li>
 
         </ul>

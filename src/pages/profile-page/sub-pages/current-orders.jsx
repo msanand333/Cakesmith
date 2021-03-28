@@ -1,7 +1,20 @@
-import React from 'react'
+import { ref } from 'js/const';
+import { useAuth } from 'js/firebase';
+import orderService from 'js/order-service';
+import React, {useState, useEffect} from 'react'
 import {ItemInfo} from '../../../components/item-info';
 
 const CurrentOrders = () => {
+    const[user] = useAuth()
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        if(!user?.uid) return;
+        orderService.getCurrentOrder(user.uid).then((orders) => {
+            setProducts(orders)
+        })
+    }, [user])
+
     return (
         <div className="current-orders">
               <div className="item-details">
@@ -13,11 +26,11 @@ const CurrentOrders = () => {
                         <li className="delete">Delete</li>
                     </ul>
                     <div className="container">
-                       
-                        <ItemInfo type="placed-order"/>
-                        <ItemInfo type="placed-order"/>
-                        
-                        
+                       {
+                           products.map((product) => (
+                                <ItemInfo type="placed-order" product={product}/>
+                           ))
+                       }
                     </div>
                 </div>
             
