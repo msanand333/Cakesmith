@@ -1,0 +1,12 @@
+{
+  "name": "emulator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "firebase-admin": "^9.5.0"
+  },
+  "scripts": {
+    "setup": "export FIRESTORE_EMULATOR_HOST=\"localhost: 8080\""
+  }
+}

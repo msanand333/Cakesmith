@@ -39,4 +39,17 @@ export function useAuth() {
     return [user, loading, error]
 }
 
+const firestore = () => firebase.firestore()
+
+export async function getCurrentUserInfo() {
+  const {email, displayName, uid} = firebase.auth().currentUser
+  return {
+    email,
+    userName: displayName,
+    userId: uid
+  }
+}
+
+export {firestore};
+
 window.firebase = firebase

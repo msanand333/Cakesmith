@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CardDetailsForm = () => {
+const CardDetailsForm = ({onNext, onPre, card, setCard}) => {
     return (
         <div className="form card-details">
             <ul className="stages">
@@ -12,7 +12,7 @@ const CardDetailsForm = () => {
             <ul>
                 <li className="input-wrapper card-number">
                     <label htmlFor="">Card number</label>
-                    <input className="error" type="text" />
+                    <input className="error" type="text" value={card} onChange={(event) => setCard(event.target.value)}/>
                     <span className="error-msg">Invalid card number</span>
                 </li>
             </ul>
@@ -29,8 +29,8 @@ const CardDetailsForm = () => {
                 </li>
             </ul>
             <div className="action-btn-wrapper">
-                <button className="btn-secondary">Back</button>
-                <button className="btn-secondary">Submit</button>
+                <button className="btn-secondary" onClick={onPre}>Back</button>
+                <button className="btn-secondary" onClick={onNext}>Submit</button>
             </div>
         </div>
     )

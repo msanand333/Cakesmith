@@ -71,6 +71,7 @@ const useCart = () => {
     setProducts(nextState);
     return nextState;
   }
+
   useEffect(() => {
     const total = products.reduce((sum, {total}) =>sum + total, 0 )
     setTotal(total)
