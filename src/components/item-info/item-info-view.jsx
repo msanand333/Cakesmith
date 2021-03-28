@@ -7,27 +7,27 @@ import ReceivedOrderItemInfo from './receivedOrder-itemInfo';
 const ItemInfoView = (props) => {
     if (props.type === "cart") {
         return (
-            <CartItemInfo />
+            <CartItemInfo {...props}/>
         )
     }
     else if (props.type === "edit") {
         return (
-            <EditItemInfo />
+            <EditItemInfo {...props}/>
         )
     }
     else if (props.type === "available") {
         return (
-            <AvailableItemInfo />
+            <AvailableItemInfo {...props}/>
         )
     }
     else if (props.type === "placed-order") {
         return (
-            <PlacedOrderItemInfo />
+            <PlacedOrderItemInfo {...props}/>
         )
     }
     else if (props.type === "received-order") {
         return (
-            <ReceivedOrderItemInfo />
+            <ReceivedOrderItemInfo {...props}/>
         )
     }
 

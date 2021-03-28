@@ -1,9 +1,9 @@
 import React from 'react'
-import BlackForest from '../../../assets/images/cakes/black-forest.jpeg';
-const Img = () => {
+
+const Img = ({ src }) => {
     return (
         <li className="image">
-            <img src={BlackForest} alt="Black forest" />
+            <img src={src} alt="Black forest" />
         </li>
     )
 }

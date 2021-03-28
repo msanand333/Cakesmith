@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Description = () => {
+const Description = ({ text }) => {
     return (
         <li className="description">
-                <p> Black forest cake</p>
+                <p>{text}</p>
         </li>
     )
 }

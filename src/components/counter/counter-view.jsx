@@ -1,31 +1,12 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
-const CounterView = () => {
-    const [count, setCount] = useState(0);
-
-    const incCount = () => {
-        if(count<10){
-            setCount(count + 1);
-        }
-        else{
-            setCount(10)
-        }
-      
-    }
-    const decCount = () => {
-        if(count>0){
-            setCount(count - 1);
-        }
-        else{
-            setCount(0)
-        }
-      
-    }
+const CounterView = ({ onInc, onDec, count }) => {
     return (
         <div className="counter">
-            <button onClick={decCount}>&#8722;</button>
+            <button onClick={() => onDec(count)}>&#8722;</button>
             <span>{count}</span>
-            <button onClick={incCount}>&#43;</button>
+            <button onClick={() => onInc(count)}>&#43;</button>
         </div>
     )
 }
