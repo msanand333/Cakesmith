@@ -10,13 +10,18 @@ import { PaymentPage } from './pages/payment-page';
 import { AdminPage } from './pages/admin-page';
 import { LoginPage } from './pages/login-page';
 import { ProfilePage } from './pages/profile-page';
+import firebaseInit from './js/firebase'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+firebaseInit()
 
 const App = () => {
   return (
-
     <Router>
       <div>
         <Navbar />
+         <ToastContainer />
         <Switch>
           <Route path='/' exact component={HomePage} />
           <Route path='/shop' component={ShopPage} />
