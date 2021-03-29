@@ -48,7 +48,8 @@ class OrderService {
     const snap = await query.get()
     const orders = snap.docs.reduce((pre ,order) => {
         let {products, status} = order.data()
-        products = products.map((product) => ({...product, status}))
+        const orderId = order.id
+        products = products.map((product) => ({...product, status, orderId}))
         return [...pre, ...products]
     }, [])
     return orders
@@ -67,6 +68,10 @@ class OrderService {
   async getPlacedOrders(){
     const filters = [['status', '==', ORDER_STATUS.PLACED]]
     return this.getOrders(filters)
+  }
+
+  async updateOrderStatus( orderId, status){
+    return ref().orders.doc(orderId).update('status', status)
   }
 }
 

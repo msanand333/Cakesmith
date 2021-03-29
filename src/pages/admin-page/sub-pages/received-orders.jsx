@@ -34,7 +34,7 @@ const ReceivedOrders = () => {
                 <div className="container">
                 {
                     products.map((product) => (
-                        <ItemInfo type="received-order" product={product} key={product.productId}/>
+                        <ItemInfo type="received-order" product={product} key={product.productId} onStatusChange={(status) => orderService.updateOrderStatus(product.orderId, status) }/>
                     ))
                 }
                 </div>
