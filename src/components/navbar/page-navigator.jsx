@@ -5,10 +5,12 @@ import firebase from '@firebase/app'
 import '@firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCartContext } from 'context/cart-context';
+import { ROLE, useRole } from 'js/iam';
 
 const PageNavigator = () => {
     const [user, loading, error] = useAuthState(firebase.auth())
     const {products} = useCartContext()
+    const role = useRole()
     const quantity = products.length
     return (
         <nav>
@@ -24,9 +26,11 @@ const PageNavigator = () => {
                 <Link to='/profile'>
                 Profile
                 </Link>
-                <Link to='/admin/order'>
-                    Admin Panel
-                </Link>
+                {
+                    role === ROLE.OWNER && <Link to='/admin/order'>
+                        Admin Panel
+                    </Link>
+                }
                 <Link to='/cart'>
                     <CartIcon /> <code>{quantity}</code>
                 </Link>

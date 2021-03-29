@@ -65,8 +65,8 @@ class OrderService {
     return this.getOrders(filters)
   }
 
-  async getPlacedOrders(){
-    const filters = [['status', '==', ORDER_STATUS.PLACED]]
+  async getPendingOrder(){
+    const filters = [['status', '!=', ORDER_STATUS.DELIVERED]]
     return this.getOrders(filters)
   }
 

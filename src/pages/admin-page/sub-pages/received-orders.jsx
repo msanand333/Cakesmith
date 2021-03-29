@@ -11,7 +11,7 @@ const useProduct = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
         if(role !== ROLE.OWNER) return
-        orderService.getPlacedOrders().then((orders) => {
+        orderService.getPendingOrder().then((orders) => {
             setProducts(orders)
         })
     }, [role])
