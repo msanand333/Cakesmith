@@ -56,12 +56,12 @@ class OrderService {
   }
 
   async getCurrentOrder(userId){
-    const filters = [['placedUserId', '==', userId], ['archived', '==', false]]
+    const filters = [['placedUserId', '==', userId], ['status', '!=', ORDER_STATUS.DELIVERED]]
     return this.getOrders(filters)
   }
 
   async getPastOrder(userId){
-    const filters = [['placedUserId', '==', userId], ['archived', '==', false]]
+    const filters = [['placedUserId', '==', userId], ['status', '==', ORDER_STATUS.DELIVERED]]
     return this.getOrders(filters)
   }
 
