@@ -2,14 +2,14 @@ import React from 'react'
 import Img from './sub-components/img'
 import Description from './sub-components/description'
 
-const ReceivedOrderItemInfo = () => {
+const ReceivedOrderItemInfo = ({ product }) => {
     return (
         <ul className="info">
-            <Img />
-            <Description />
-            <li className="quantity">5</li>
+            <Img src={product.imgUrl}/>
+            <Description text={product.name}/>
+            <li className="quantity">{product.quantity}</li>
             <li className="price">
-                &#8377;500
+                &#8377;{product.total}
             </li>
             <li className="modify status">
                 <div className="stage-1">

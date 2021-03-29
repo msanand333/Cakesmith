@@ -6,7 +6,7 @@ import { useState } from 'react';
 import {ItemInfo} from '../../../components/item-info';
 
 const OrderHistory = () => {
-        const[user] = useAuth()
+    const[user] = useAuth()
     const [products, setProducts] = useState([])
 
     useEffect(() => {

@@ -43,8 +43,9 @@ class OrderService {
     await this.changeItemsInInventory(orderInfo);
   }
 
-  getOrders = async (userId, archived) => {
-    const snap = await ref().orders.where('placedUserId', '==', userId).where('archived', '==', archived).get()
+  getOrders = async (filters) => {
+    const query = filters.reduce((q, filter) => q.where(...filter), ref().orders) 
+    const snap = await query.get()
     const orders = snap.docs.reduce((pre ,order) => {
         let {products, status} = order.data()
         products = products.map((product) => ({...product, status}))
@@ -54,11 +55,18 @@ class OrderService {
   }
 
   async getCurrentOrder(userId){
-    return this.getOrders(userId, false)
+    const filters = [['placedUserId', '==', userId], ['archived', '==', false]]
+    return this.getOrders(filters)
   }
 
   async getPastOrder(userId){
-    return this.getOrders(userId, true)
+    const filters = [['placedUserId', '==', userId], ['archived', '==', false]]
+    return this.getOrders(filters)
+  }
+
+  async getPlacedOrders(){
+    const filters = [['status', '==', ORDER_STATUS.PLACED]]
+    return this.getOrders(filters)
   }
 }
 

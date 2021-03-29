@@ -2,8 +2,6 @@ import firebase from "@firebase/app";
 import '@firebase/auth'
 import '@firebase/firestore'
 import { useAuthState } from "react-firebase-hooks/auth";
-import { ref } from "./const";
-
 // TODO: Replace the following with your app's Firebase project configuration
 // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
 
@@ -42,7 +40,7 @@ export function useAuth() {
 const firestore = () => firebase.firestore()
 
 export async function getCurrentUserInfo() {
-  const {email, displayName, uid} = firebase.auth().currentUser
+  const {email, displayName, uid} = firebase.auth().currentUser || {}
   return {
     email,
     userName: displayName,

@@ -1,7 +1,26 @@
+import { ROLE, useRole } from 'js/iam';
+import orderService from 'js/order-service';
 import React from 'react'
+import { useState } from 'react';
+import { useEffect } from 'react';
 import {ItemInfo} from '../../../components/item-info';
 
+
+const useProduct = () => {
+    const role = useRole()
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        if(role !== ROLE.OWNER) return
+        orderService.getPlacedOrders().then((orders) => {
+            setProducts(orders)
+        })
+    }, [role])
+    return products
+}
+
+
 const ReceivedOrders = () => {
+    const products = useProduct()
     return (
         <div className="placed-orders">
             <div className="item-details">
@@ -13,9 +32,11 @@ const ReceivedOrders = () => {
                     <li className="delete">Delete</li>
                 </ul>
                 <div className="container">
-                    <ItemInfo type="received-order" />
-                    <ItemInfo type="received-order" />
-
+                {
+                    products.map((product) => (
+                        <ItemInfo type="received-order" product={product} key={product.productId}/>
+                    ))
+                }
                 </div>
             </div>
 
