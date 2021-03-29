@@ -38,7 +38,7 @@ const CartPageView = () => {
                         </li>
                         <li className="checkout-btn">
                             <Link to='/payment'>
-                            <button className="btn-secondary">Checkout</button>
+                            <button className="btn-secondary" disabled={!products.length}>Checkout</button>
                             </Link>
                         </li>
                     </ul>
