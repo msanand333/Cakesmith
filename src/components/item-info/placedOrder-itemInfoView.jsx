@@ -14,6 +14,10 @@ const PlacedOrderItemInfo = ({ product }) => {
             <li className="modify status">
                 <p className="success">{product.status}</p>
             </li>
+            <li className="modify status">
+                <textarea></textarea>
+                <button>Submit</button>
+            </li>
 
         </ul>
     )

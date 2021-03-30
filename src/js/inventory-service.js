@@ -16,6 +16,21 @@ class InventoryService {
       id: product.id
     }))
   }
+
+  transformProduct(productInfo) {
+    const info = JSON.parse(JSON.stringify(productInfo))
+    info['items'] = Number(info.items)
+    info['cost'] = Number(info.cost)
+    return info
+  }
+
+  async updateProduct(productId, productInfo) {
+    return ref().inventory.doc(productId).update(this.transformProduct(productInfo))
+  }
+
+  async addProduct(productInfo) {
+    return ref().inventory.add(this.transformProduct(productInfo))
+  }
 }
 
 export default new InventoryService()

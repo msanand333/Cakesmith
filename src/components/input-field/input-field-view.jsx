@@ -5,7 +5,7 @@ const InputFieldView = (props) => {
         <li className="input-wrapper">
             <label htmlFor="">{props.label}</label>
             <input className="error" type="text" value={props.value} onChange={props.onChange}/>
-            <span className="error-msg">Invalid Input</span>
+            {!props.value && <span className="error-msg">Invalid Input</span>}
         </li>
     )
 }

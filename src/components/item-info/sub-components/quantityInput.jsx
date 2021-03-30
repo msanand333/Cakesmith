@@ -1,9 +1,9 @@
 import React from 'react'
 
-const QuantityInput = () => {
+const QuantityInput = ({ value, onChange }) => {
     return (
         <li className="quantity input-wrapper">
-            <input type="number"/>
+            <input type="number" value={value} onChange={onChange}/>
         </li>
     )
 }

@@ -21,8 +21,8 @@ export const findByProductId = (products, productId) => {
   return product[0]
 }
 
-const findIndexByProductId = (products, productId) => {
-  const id = products.findIndex((p) => p.productId === productId)
+export const findIndexByProductId = (products, productId, keyToMatch='productId') => {
+  const id = products.findIndex((p) => p[keyToMatch] === productId)
   return id
 }
 

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const PriceInput = () => {
+const PriceInput = ({ value, onChange }) => {
     return (
         <li className="price input-wrapper">
-            <input type="number"/>
+            <input type="number" value={value} onChange={onChange}/>
         </li>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Img from './sub-components/img'
 import Description from './sub-components/description';
 import { ReactComponent as TrashIcon } from '../../assets/images/svg/trash.svg'
-const AvailableItemInfo = ({ product }) => {
+const AvailableItemInfo = ({ product, onEditStatusChanged }) => {
     return (
         <ul className="info">
             <Img src={product.imgUrl}/>
@@ -10,7 +10,7 @@ const AvailableItemInfo = ({ product }) => {
             <li className="quantity">{product.items}</li>
             <li className="price">&#8377;{product.cost}</li>
             <li className="modify">
-                <button className="btn-secondary update-btn">Update</button>
+                <button className="btn-secondary update-btn" onClick={onEditStatusChanged}>Update</button>
                 <i>
                     <TrashIcon />
                 </i>
