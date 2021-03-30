@@ -57,4 +57,8 @@ window.makeMeAdmin = async () => {
   ref().user.doc(userId).set({'role': '0'})
 }
 
+export async function logout(){
+  return firebase.auth().signOut()
+}
+
 window.firebase = firebase
