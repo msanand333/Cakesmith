@@ -28,7 +28,8 @@
     "dev": "firebase emulators:start & yarn start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "cd emulator && yarn install && yarn setup"
   },
   "eslintConfig": {
     "extends": [

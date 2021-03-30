@@ -7,6 +7,6 @@
     "firebase-admin": "^9.5.0"
   },
   "scripts": {
-    "setup": "export FIRESTORE_EMULATOR_HOST=\"localhost:8080\""
+    "setup": "FIRESTORE_EMULATOR_HOST=\"localhost:8080\" node setup.js"
   }
 }
