@@ -1,13 +1,24 @@
-.shop-page{
-    .products{
+.shop-page {
+    .search-input {
+        text-align: center;
+        width: 250px;
+        margin: 50px auto 0 auto;
+
+        input {
+            padding: 12px 20px;
+        }
+
+    }
+
+    .products {
         display: flex;
         flex-wrap: wrap;
-        justify-content:center;
+        justify-content: center;
         padding: 100px 50px;
         // height: 100vh;
         overflow: auto;
 
-        .product-card{
+        .product-card {
             margin: 0 15px 30px;
         }
     }

@@ -50,7 +50,10 @@ const ShopPageView = () => {
     const isProductAdded = (productId) => findByProductId(products, productId)
     return (
         <main className="shop-page">
-            <input type="text" value={search} onChange={(event) => setSearch(event.target.value)}/>
+            <ul className="input-wrapper search-input" >
+            <input placeholder="Search product" type="text" value={search} onChange={(event) => setSearch(event.target.value)}/>
+            </ul>
+           
             <ul className="products">
             {
                 productsToDisplay?.map((product) => (

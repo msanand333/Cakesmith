@@ -9,7 +9,7 @@ const HomePageView = () => {
             <img className="bg-img" src={heroBg} alt="Hero" />
             <section className="hero-section">
                 <div className="content">
-                    <h1>Cakesmith Welcomes You </h1>
+                    <h1>Just Cakes Welcomes You </h1>
                     <h4>Freshly Baked Goodness You Can't Resist</h4>
                     <Link to='/shop'>
                         <button className="btn-secondary">Shop Now</button>

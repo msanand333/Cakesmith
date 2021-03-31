@@ -4,7 +4,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import {ItemInfo} from '../../../components/item-info';
-
+import {ReviewModal} from '../../../components/review-modal';
 const OrderHistory = () => {
     const[user] = useAuth()
     const [products, setProducts] = useState([])
@@ -35,6 +35,7 @@ const OrderHistory = () => {
 
                 </div>
             </div>
+            <ReviewModal/>
 
         </div>
 
