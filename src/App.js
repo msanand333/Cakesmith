@@ -10,7 +10,8 @@ import { PaymentPage } from './pages/payment-page';
 import { AdminPage } from './pages/admin-page';
 import { LoginPage } from './pages/login-page';
 import { ProfilePage } from './pages/profile-page';
-import firebaseInit from './js/firebase'
+import { ProductPage } from './pages/product-page';
+import firebaseInit from './js/firebase';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,6 +31,8 @@ const App = () => {
           <Route path='/admin' component={AdminPage} />
           <Route path='/profile' component={ProfilePage}/>
           <Route path='/login' component={LoginPage} />
+          <Route path='/product-page' component={ProductPage} />
+
         </Switch>
         <Footer />
       </div>
