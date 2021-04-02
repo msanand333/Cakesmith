@@ -6,6 +6,11 @@ const Sidebar = () => {
         <aside className="sidebar">
             <ul>
                 <li>
+                    <Link  to='/profile/account-info'>
+                        Account Info
+                    </Link>
+                </li>
+                <li>
                     <Link  to='/profile'>
                         Current Orders
                     </Link>
