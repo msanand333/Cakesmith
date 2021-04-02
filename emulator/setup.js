@@ -20,6 +20,7 @@ const product2 = {
 
 function populateInventory(data){
   db.collection('inventory').add(data)
+  console.log('tes')
 }
 
 populateInventory(product1)

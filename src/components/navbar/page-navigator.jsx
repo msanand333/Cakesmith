@@ -22,9 +22,6 @@ const PageNavigator = () => {
                         <Link to='/'>
                         Home
                         </Link>
-                        <Link to='/product-page'> 
-                        Product-page
-                        </Link>
                         <Link to='/shop'>
                             Shop
                         </Link>

@@ -5,4 +5,7 @@ export const ref = () => ({
   inventory: firebase.firestore().collection('inventory'),
   orders: firebase.firestore().collection('orders'),
   user: firebase.firestore().collection('user'),
+  review: firebase.firestore().collection('review'),
 })
+
+window.ref = ref

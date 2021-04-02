@@ -34,5 +34,12 @@
       description: string,
       imgUrl: string,
     }
+  },
+  review: {
+    <review-id>: {
+      userId: <user-id>,
+      review: string,
+      productId: <product-id>,
+    }
   }
 }
