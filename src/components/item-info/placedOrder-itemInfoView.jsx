@@ -33,7 +33,12 @@ const PlacedOrderItemInfo = ({ product }) => {
         console.log(review)
         console.log(await reviewService.shouldAllowToAdd(userId, productId))
         if(await reviewService.shouldAllowToAdd(userId, productId)) {
-            await reviewService.addReview(userId, productId, review, user)
+            const userInfo = {
+                name: user.displayName,
+                email: user.email,
+                imgUrl: user.photoURL,
+            }
+            await reviewService.addReview(userId, productId, review, userInfo)
             toast('Thanks for the review');
             setAlreadyReview(true);
             setShowReview(false);

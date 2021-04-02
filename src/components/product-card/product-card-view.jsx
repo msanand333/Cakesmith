@@ -24,7 +24,8 @@ const ProductCardView = ({ product, onAdd, onRemove, isAdded: _isAdded }) => {
         setIsAdded(false)
     }
 
-    const syncWithCart = () => {
+    const syncWithCart = (event) => {
+        event.stopPropagation();
         if(!isLoggedIn) return toast('please login to continue')
         if (isAdded) return removeFromCart()
         addToCart()

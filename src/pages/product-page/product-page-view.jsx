@@ -4,13 +4,26 @@ import { useDocumentData, useCollectionData } from 'react-firebase-hooks/firesto
 import { ref } from 'js/const';
 import inventoryService from 'js/inventory-service';
 import reviewService from 'js/review-service';
+import { findByProductId, useCartContext } from 'context/cart-context';
 
 const ProductPageView = () => {
     const { itemId } = useParams()
-    const [productInfo, productLoading] = useDocumentData(inventoryService.getProductRef(itemId))
+    const [productInfo, productLoading] = useDocumentData(inventoryService.getProductRef(itemId), {
+        idField: 'id'
+    })
     const [reviewInfo, reviewLoading] = useCollectionData(reviewService.getReviewRef(itemId), {
         idField: 'id'
     })
+
+    const {addToCart, products, removeFromCart} = useCartContext()
+    const product = findByProductId(products, itemId);
+
+    const syncWithCart = () => {
+        if(product) return removeFromCart(itemId)
+        const {name, id: productId,  cost, imgUrl, cost: perCost} = productInfo
+        addToCart({name, productId,  cost, imgUrl, perCost}, 1);
+    }
+
     if(productLoading || reviewLoading) {
         return <p>Fetching details</p>
     }
@@ -23,7 +36,7 @@ const ProductPageView = () => {
                <li className="product-description">
                     <h3>{productInfo.name}</h3>
                     <p>{productInfo.description}</p>
-                    <button className="btn-secondary">Add to cart</button>
+                    <button className="btn-secondary" onClick={syncWithCart}>{product ?'Remove from cart' : 'Add to cart'}</button>
                </li>
                <li className="product-reviews">
                     <h3>Reviews</h3>
