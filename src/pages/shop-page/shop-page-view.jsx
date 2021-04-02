@@ -29,7 +29,6 @@ const ShopPageView = () => {
     const [search, setSearch] = useState('')
 
     useEffect(() => {
-        console.log(snapshot?.docs)
         setProductsToDisplay(snapshot?.docs)
     }, [snapshot])
 

@@ -3,13 +3,15 @@ import classNames from 'classnames'
 import { useState } from 'react';
 import { useAuth } from 'js/firebase';
 import { toast } from 'react-toastify';
+import { useHistory } from "react-router-dom";
 
 const ProductCardView = ({ product, onAdd, onRemove, isAdded: _isAdded }) => {
     const { name, cost, imgUrl } = product || {}
     const [user] = useAuth()
     const isLoggedIn = Boolean(user)
     const [isAdded,setIsAdded]=useState(_isAdded)
-    
+    const history = useHistory()
+
     const addToCart = () => {
         const isAdded = onAdd({product})
         if(!isAdded) return toast('Something went wrong refresh the page')
@@ -34,7 +36,9 @@ const ProductCardView = ({ product, onAdd, onRemove, isAdded: _isAdded }) => {
     )
 
     return (
-        <li className="product-card">
+        <li className="product-card" onClick={() => {
+            history.push(`/item/${product.productId}`)
+        }}>
                 <figure>
                     <img src={imgUrl} alt="Cake Name" />
                 </figure>

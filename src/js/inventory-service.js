@@ -31,6 +31,10 @@ class InventoryService {
   async addProduct(productInfo) {
     return ref().inventory.add(this.transformProduct(productInfo))
   }
+
+  getProductRef(productId){
+    return ref().inventory.doc(productId)
+  }
 }
 
 export default new InventoryService()

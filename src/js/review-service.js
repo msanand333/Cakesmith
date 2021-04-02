@@ -2,11 +2,12 @@ import { ref } from "./const";
 
 class ReviewSevice{
     
-    async addReview(userId, productId, review) {
+    async addReview(userId, productId, review, userInfo) {
         return ref().review.add({
             userId: userId,
             review: review,
             productId: productId,
+            userInfo: userInfo,
         })
     }
 
@@ -16,8 +17,12 @@ class ReviewSevice{
         return review.docs.length == 0
     }
 
+    getReviewRef(productId){
+        return ref().review.where('productId', '==', productId)
+    }
+
     async getReview(productId){
-        const reviews = await ref().review.where('productId', '==', productId).get()
+        const reviews = await this.getReviewRef(productId).get()
         return reviews.docs
     }
 }

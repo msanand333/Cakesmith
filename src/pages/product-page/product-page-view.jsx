@@ -1,30 +1,41 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { useDocumentData, useCollectionData } from 'react-firebase-hooks/firestore';
+import { ref } from 'js/const';
+import inventoryService from 'js/inventory-service';
+import reviewService from 'js/review-service';
 
 const ProductPageView = () => {
+    const { itemId } = useParams()
+    const [productInfo, productLoading] = useDocumentData(inventoryService.getProductRef(itemId))
+    const [reviewInfo, reviewLoading] = useCollectionData(reviewService.getReviewRef(itemId), {
+        idField: 'id'
+    })
+    if(productLoading || reviewLoading) {
+        return <p>Fetching details</p>
+    }
     return (
        <main className="product-page">
            <ul className="container">
                <li className="product-image">
-                 <img src="" alt="Product-image"/>
+                 <img src={productInfo.imgUrl} alt="Product-image"/>
                </li>
                <li className="product-description">
-                    <h3>Product Name</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi illo nemo perferendis reiciendis eos fugit asperiores, blanditiis inventore, ratione consequuntur quas minima magnam debitis odio necessitatibus libero maxime dolore itaque?</p>
+                    <h3>{productInfo.name}</h3>
+                    <p>{productInfo.description}</p>
                     <button className="btn-secondary">Add to cart</button>
                </li>
                <li className="product-reviews">
                     <h3>Reviews</h3>
                     <ul className="review-wrapper">
-                        <li className="review">
-                            <h5>Reviewer Name</h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima inventore est voluptate repellat unde tempora quisquam corrupti maiores quia, commodi voluptates soluta rem pariatur accusantium! A tenetur exercitationem illum sunt.</p>
-                            
-                        </li>
-                        <li className="review">
-                            <h5>Reviewer Name</h5>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima inventore est voluptate repellat unde tempora quisquam corrupti maiores quia, commodi voluptates soluta rem pariatur accusantium! A tenetur exercitationem illum sunt.</p>
-                            
-                        </li>
+                    {
+                        reviewInfo?.map((review) => (
+                            <li className="review" key={review.id}>
+                                <h5>{review.userInfo.name}</h5>
+                                <p>{review.review}</p>
+                            </li>
+                        )) ?? null
+                    }
                     </ul>
                </li>
 
