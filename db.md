@@ -3,7 +3,13 @@
     <user-id>: {
       name: string,
       email: string,
-      role: ['admin']
+      role: ['admin'],
+      address: string,
+      gender: <male: 0, female: 1, others: 2>,
+      dob: <timestamp>,
+      address: string,
+      city: string,
+      contact: string,
     }
   },
   orders: {

@@ -33,6 +33,18 @@ export async function signInWithGoogle () {
   return firebase.auth().signInWithPopup(provider)
 }
 
+export async function signInWithEmail (email, password) {
+  return firebase.auth().signInWithEmailAndPassword(email, password)
+}
+
+export async function signUpWithEmail (email, password) {
+  return firebase.auth().createUserWithEmailAndPassword(email, password)
+}
+
+export async function updatePassword(updatePassword) {
+  return firebase.auth().currentUser.updatePassword(updatePassword)
+}
+
 export function useAuth() {
     const [user, loading, error] = useAuthState(firebase.auth())
     return [user, loading, error]

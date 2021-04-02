@@ -1,6 +1,9 @@
 import { useCartContext } from 'context/cart-context';
 import { useCheckout } from 'hooks/checkout';
+import { useAuth } from 'js/firebase';
+import userServices from 'js/user-services';
 import React from 'react'
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import AddressForm from './address-form';
@@ -14,6 +17,15 @@ const PaymentPageView = () => {
         products,total
     }
     const [page, setPage] = useState(1)
+    const [user] = useAuth()
+
+    useEffect(() => {
+        if(!user) return
+        userServices.getUserInfo(user.uid).then((info) => {
+            setAddress(info.address)
+            setZip(info.zip)
+        })
+    }, [user])
     return (
         <main className="payment-page">
 
