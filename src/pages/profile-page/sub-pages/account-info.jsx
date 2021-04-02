@@ -85,7 +85,7 @@ const AccountInfo = () => {
            </ul>
            <div className='action-btn-wrapper'>
                 <button className='btn-secondary' onClick={ async () => {
-                    if(pass && await updateNewPassword(pass)){
+                    if((pass && await updateNewPassword(pass)) && !pass){
                          await userServices.addUser(authUser.uid, info)
                         toast('Details updated successfully')
                         history.push('/shop')

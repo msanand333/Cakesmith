@@ -35,7 +35,6 @@ const OrderHistory = () => {
 
                 </div>
             </div>
-            <ReviewModal/>
 
         </div>
 
