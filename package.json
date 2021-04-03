@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mock": "cd emulator && yarn install && yarn setup"
+    "mock": "cd emulator && yarn install && yarn setup",
+    "deploy": "yarn build && firebase deploy --only hosting"
   },
   "eslintConfig": {
     "extends": [
