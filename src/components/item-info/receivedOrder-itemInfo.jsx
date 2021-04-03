@@ -21,12 +21,12 @@ const ReceivedOrderItemInfo = ({ product, onStatusChange }) => {
                 <div className="stage-1">
                     <input id="accept" name={`stage-1-${product.productId}`} type="radio" onClick={() => { onStatusChange(ORDER_STATUS.ACCEPTED); setIsRejected(false); }} defaultChecked={product.status === ORDER_STATUS.ACCEPTED} /> <label htmlFor="accept">Accept</label>
                     <br />
-                    <input id="reject" name="stage-1" type="radio" onClick={() => { onStatusChange(ORDER_STATUS.REJECTED); setIsRejected(true) }} defaultChecked={isRejected}/> <label htmlFor="reject">Reject</label>
+                    <input id="reject" name={`stage-1-${product.productId}`} type="radio" onClick={() => { onStatusChange(ORDER_STATUS.REJECTED); setIsRejected(true) }} defaultChecked={isRejected}/> <label htmlFor="reject">Reject</label>
                 </div>
                 <div className="stage-2">
-                    <input id="preparing" name="stage-2" type="radio" onClick={() => {onStatusChange(ORDER_STATUS.PREPARING); setIsDelivered(false)}} disabled={isRejected} defaultChecked={product.status === ORDER_STATUS.PREPARING}/> <label htmlFor="preparing">Preparing</label>
+                    <input id="preparing" name={`stage-2${product.productId}`} type="radio" onClick={() => {onStatusChange(ORDER_STATUS.PREPARING); setIsDelivered(false)}} disabled={isRejected} defaultChecked={product.status === ORDER_STATUS.PREPARING}/> <label htmlFor="preparing">Preparing</label>
                     <br />
-                    <input id="delivered" name="stage-2" type="radio" onClick={() => {onStatusChange(ORDER_STATUS.DELIVERED); setIsDelivered(true); }} disabled={isRejected} defaultChecked={product.status === ORDER_STATUS.DELIVERED}/> <label htmlFor="delivered">Delivered</label>
+                    <input id="delivered" name={`stage-2${product.productId}`} type="radio" onClick={() => {onStatusChange(ORDER_STATUS.DELIVERED); setIsDelivered(true); }} disabled={isRejected} defaultChecked={product.status === ORDER_STATUS.DELIVERED}/> <label htmlFor="delivered">Delivered</label>
                 </div>
             </li>
 

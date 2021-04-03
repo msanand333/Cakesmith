@@ -32,8 +32,13 @@
         justify-content: space-between;
 
         .product-name {
+            @include truncate;
             display: inline-block;
             margin-bottom: 20px;
+            max-width: 120px;
+            font-size: 14px;
+           
+
         }
 
         .quantity {
