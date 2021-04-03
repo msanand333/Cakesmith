@@ -35,6 +35,11 @@
             cursor: not-allowed;
         }
     
+        &.added {
+            background-color: transparent;
+            border: 1px solid $border-secondary;
+            color: $btn-primary-txt;
+        }
     }
 
 

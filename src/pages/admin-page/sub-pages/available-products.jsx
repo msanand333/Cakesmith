@@ -34,11 +34,22 @@ const useProduct = () => {
         })
     }
 
-    return [products, setProduct, addProduct]
+    const deleteProduct = (id) => {
+        setProducts((products) => {
+            const nextState = JSON.parse(JSON.stringify(products))
+            const index = findIndexByProductId(nextState, id, 'id')
+            console.log('index fount', index)
+            if (index === -1) return nextState
+            nextState.splice(index, 1);
+            return nextState
+        })
+    }
+
+    return [products, setProduct, addProduct, deleteProduct]
 }
 
 const AvailableProducts = () => {
-    const [products, setProduct, addProduct] = useProduct()
+    const [products, setProduct, addProduct, deleteProduct] = useProduct()
     const [editInfo, setEditInfo] = useState({})
 
     const [newProduct, setNewProduct] = useState()
@@ -53,6 +64,11 @@ const AvailableProducts = () => {
     const onEdit = async (product) => {
         await inventoryService.updateProduct(product.id, product)
         setProduct(product.id, product)
+    }
+
+    const onDelete = async (productId) => {
+        await inventoryService.deleteProduct(productId)
+        deleteProduct(productId);
     }
 
     const onAdd = async (product) => {
@@ -86,6 +102,7 @@ const AvailableProducts = () => {
                             product={product} key={product.id} 
                             onEditStatusChanged={() => onEditStatusChanged(product)}
                             onEdit={onEdit}
+                            onDelete={onDelete}
                         />)
                     }
                 </div>

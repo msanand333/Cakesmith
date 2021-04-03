@@ -5,6 +5,7 @@ import { ref } from 'js/const';
 import inventoryService from 'js/inventory-service';
 import reviewService from 'js/review-service';
 import { findByProductId, useCartContext } from 'context/cart-context';
+import classNames from 'classnames';
 
 const ProductPageView = () => {
     const { itemId } = useParams()
@@ -27,6 +28,13 @@ const ProductPageView = () => {
     if(productLoading || reviewLoading) {
         return <p>Fetching details</p>
     }
+
+    const cx = classNames(
+        'btn-secondary',{
+            'added': product
+        }
+    )
+    
     return (
        <main className="product-page">
            <ul className="container">
@@ -36,7 +44,7 @@ const ProductPageView = () => {
                <li className="product-description">
                     <h3>{productInfo.name}</h3>
                     <p>{productInfo.description}</p>
-                    <button className="btn-secondary" onClick={syncWithCart}>{product ?'Remove from cart' : 'Add to cart'}</button>
+                    <button className={cx} onClick={syncWithCart}>{product ?'Remove from cart' : 'Add to cart'}</button>
                </li>
                <li className="product-reviews">
                     <h3>Reviews</h3>

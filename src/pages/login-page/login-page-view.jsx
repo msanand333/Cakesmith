@@ -32,9 +32,13 @@ const LoginPageView = () => {
     }
 
     const onEmailSignup = async () => {
-        if(!email || !pass) return
-        const { user } = await signUpWithEmail(email, pass)
-        await onLoginSuccess(user)
+        try{
+            if(!email || !pass) return
+            const { user } = await signUpWithEmail(email, pass)
+            await onLoginSuccess(user)
+        }catch(err) {
+            toast(err.message);
+        }
     }
 
     return (
@@ -49,8 +53,8 @@ const LoginPageView = () => {
                     <InputField label='Email' type='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
                     <InputField  label= 'Password' type='password' value={pass} onChange={(event) => setPass(event.target.value)}/>
                     <div>
-                        <button onClick={onEmailLogin}>SignIn</button>
-                        <button onClick={onEmailSignup}>SignUp</button>
+                        <button onClick={onEmailLogin} className='btn-primary'>SignIn</button>
+                        <button onClick={onEmailSignup} className='btn-secondary'>SignUp</button>
                     </div>
                 </ul>
 

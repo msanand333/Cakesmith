@@ -35,6 +35,10 @@ class InventoryService {
   getProductRef(productId){
     return ref().inventory.doc(productId)
   }
+
+  async deleteProduct(productId) {
+    return await ref().inventory.doc(productId).delete()
+  }
 }
 
 export default new InventoryService()

@@ -18,7 +18,7 @@ const HomePageView = () => {
                 </div>
 
             </section>
-            <section className="featured-items">
+            {/* <section className="featured-items">
                 <div className="container">
                     <h3>Featured Items</h3>
                     <ul className="content">
@@ -29,7 +29,7 @@ const HomePageView = () => {
                 </div>
 
 
-            </section>
+            </section> */}
             <section className="about">
                 <div className="container">
                     <h3>About</h3>

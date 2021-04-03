@@ -23,7 +23,6 @@ const EditItemInfo = ({ product, onEditStatusChanged, onEdit }) => {
             <li className="image input-wrapper">
              <input type="text" className="image-url" value={imgUrl} onChange={onChange('imgUrl')}/>
             </li>
-           
             <DescriptionInput value={name} onChange={onChange('name')}/>
             <QuantityInput value={items} onChange={onChange('items')}/>
             <PriceInput value={cost} onChange={onChange('cost')}/>
