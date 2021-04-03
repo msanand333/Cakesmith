@@ -19,7 +19,7 @@ const ReceivedOrderItemInfo = ({ product, onStatusChange }) => {
             </li>
             <li className="modify status">
                 <div className="stage-1">
-                    <input id="accept" name="stage-1" type="radio" onClick={() => { onStatusChange(ORDER_STATUS.ACCEPTED); setIsRejected(false); }} defaultChecked={product.status === ORDER_STATUS.ACCEPTED} /> <label htmlFor="accept">Accept</label>
+                    <input id="accept" name={`stage-1-${product.productId}`} type="radio" onClick={() => { onStatusChange(ORDER_STATUS.ACCEPTED); setIsRejected(false); }} defaultChecked={product.status === ORDER_STATUS.ACCEPTED} /> <label htmlFor="accept">Accept</label>
                     <br />
                     <input id="reject" name="stage-1" type="radio" onClick={() => { onStatusChange(ORDER_STATUS.REJECTED); setIsRejected(true) }} defaultChecked={isRejected}/> <label htmlFor="reject">Reject</label>
                 </div>
