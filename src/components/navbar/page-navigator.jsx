@@ -25,7 +25,7 @@ const PageNavigator = () => {
                         <Link to='/shop'>
                             Shop
                         </Link>
-                        <Link to='/profile'>
+                        <Link to='/profile/orders'>
                         Profile
                         </Link>
                         <a onClick={async() => {

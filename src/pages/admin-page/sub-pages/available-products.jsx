@@ -92,7 +92,7 @@ const AvailableProducts = () => {
                     <li className="description">Description</li>
                     <li className="quantity">Quantity</li>
                     <li className="price">Price</li>
-                    <li className="delete">Delete</li>
+                    <li className="delete">Update</li>
                 </ul>
                 <div className="container">
                     {

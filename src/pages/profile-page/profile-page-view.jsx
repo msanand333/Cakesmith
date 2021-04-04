@@ -11,7 +11,7 @@ const ProfilePageView = () => {
             <Sidebar />
             <section className="wrapper">
                 <Switch>
-                    <Route path='/profile' exact component={CurrentOrders} />
+                    <Route path='/profile/orders' exact component={CurrentOrders} />
                     <Route path='/profile/order-history' component={OrderHistory} />
                     <Route path='/profile/account-info' component={AccountInfo} />
                 </Switch>

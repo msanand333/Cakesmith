@@ -30,19 +30,28 @@ const PlacedOrderItemInfo = ({ product }) => {
     }, [userId, productId])
 
     const onSubmitReview = async (review) => {
-        console.log(review)
-        console.log(await reviewService.shouldAllowToAdd(userId, productId))
-        if(await reviewService.shouldAllowToAdd(userId, productId)) {
-            const userInfo = {
-                name: user.displayName,
-                email: user.email,
-                imgUrl: user.photoURL,
+
+        if(review){
+            console.log(review)
+            console.log(await reviewService.shouldAllowToAdd(userId, productId))
+            if(await reviewService.shouldAllowToAdd(userId, productId)) {
+                const userInfo = {
+                    name: user.displayName,
+                    email: user.email,
+                    imgUrl: user.photoURL,
+                }
+                await reviewService.addReview(userId, productId, review, userInfo)
+                toast('Thanks for the review');
+                setAlreadyReview(true);
+                setShowReview(false);
             }
-            await reviewService.addReview(userId, productId, review, userInfo)
-            toast('Thanks for the review');
-            setAlreadyReview(true);
+        }
+
+        else{
+            toast(`Can't submit empty review`);
             setShowReview(false);
         }
+       
     }
 
     return (
