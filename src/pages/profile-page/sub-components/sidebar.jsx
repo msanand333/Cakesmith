@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <aside className="sidebar">
             <ul>
                 <li>
-                    <Link  to='/profile'>
+                    <NavLink  to='/profile/orders' activeClassName="selected">
                         Current Orders
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link  to='/profile/order-history'>
+                    <NavLink  to='/profile/account-info' activeClassName="selected">
+                        Account Info
+                    </NavLink>
+                </li>
+ 
+                <li>
+                    <NavLink  to='/profile/order-history' activeClassName="selected">
                         Order History
-                    </Link>
+                    </NavLink>
                 </li>
 
             </ul>

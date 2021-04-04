@@ -1,9 +1,12 @@
 import React from 'react'
 
-const Description = () => {
+const Description = ({ text,address,time }) => {
     return (
         <li className="description">
-                <p> Black forest cake</p>
+                <p className="product-name">{text}</p>
+                {address? <p className="address"> <span>Address - </span>{address}</p>:''}
+                {time?   <p className="time-stamp"> <span>Time - </span>{time}</p>:''}
+              
         </li>
     )
 }

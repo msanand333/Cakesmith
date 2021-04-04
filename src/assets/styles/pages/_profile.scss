@@ -1,15 +1,64 @@
-.profile-page{
+.profile-page {
     @include clearfix;
 
-    .wrapper{
+    .wrapper {
         padding: 20px;
         width: calc(100% - 300px);
         height: calc(100vh - 123px);
         overflow: auto;
 
-        .item-details{
+        .item-details {
             width: 80%;
-            margin:0 auto;
+            margin: 0 auto;
+        }
+
+        .account-info {
+            padding-top: 50px;
+
+            .container {
+                max-width: 600px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+
+                .input-wrapper {
+                    width: calc(50% - 15px);
+                    margin-bottom: 20px;
+
+                    input[type='date']{
+                        font-size: 14px;
+                    }
+
+                    label{
+                        vertical-align: middle;
+                    }
+
+                    &.gender-input {
+
+                        label,
+                        input {
+                            width: 15%;
+                            vertical-align: middle;
+
+                            &.parent-label {
+                                width: 100%;
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .action-btn-wrapper {
+                padding-top: 30px;
+                max-width: 600px;
+                margin: 0 auto;
+                button{
+                    font-size: 14px;
+                }
+            }
         }
     }
 

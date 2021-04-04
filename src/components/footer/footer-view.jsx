@@ -13,13 +13,13 @@ const FooterView = () => {
                     <li><a href="javascript:void(0)">Payments</a></li>
                 </ul>
                 <ul className="contact">
-                    <li>Cakesmith</li>
-                    <li><a href="tel:1234567890">Tel 123-4567-890</a></li>
-                    <li><a href="mailto:info@mysite.com">Email info@mysite.com</a></li>
+                    <li>Just Cakes</li>
+                    <li><a href="tel: 8013099290">Tel  8013099290</a></li>
+                    <li><a href="mailto:justcakes2512@gmail.com">Email justcakes2512@gmail.com</a></li>
                     <li className="social-media-links">
-                        <a href="javascript:void(0)"><FacebookIcon/></a>
-                        <a href="javascript:void(0)"><InstagramIcon/></a>
-                        <a href="javascript:void(0)"><YoutubeIcon/></a>
+                        <a href="https://www.facebook.com/justcakes2512/"><FacebookIcon/></a>
+                        <a href="https://instagram.com/justcakes_____?igshid=xaocnqidnao8"><InstagramIcon/></a>
+                        <a href="https://youtube.com/channel/UCLi_e7rK5w7YzgFu1iRBJyw"><YoutubeIcon/></a>
                     </li>
 
                 </ul>

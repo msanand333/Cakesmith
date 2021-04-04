@@ -15,12 +15,16 @@
             border: 1px solid $darkGrey;
             padding: 15px 10px;
             align-items: center;
-            margin-bottom: 20px;
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
 
             li {
                 font-weight: $roboto-medium;
             }
 
+        }
+        &.edit-product{
+            align-items: flex-start;
         }
 
       
@@ -55,24 +59,48 @@
 
             input{
                 width: 100%;
-                left: 0;
-                top:0;
-                opacity: 0;
-                position: absolute;
-                height: 100%;
+              
+                &.image-url{
+
+                }
             }
-            .btn-secondary{
-                font-size: 12px;
-                position: relative;
-            }
+          
         }
 
         .description {
-            width: 35%;
-            @include truncate;
+            width: 30%;
+            padding-right: 20px!important;
+          
+          
+            .product-name{
+                color: $brand-color-secondary;
+                font-size: 14px;
+                font-weight: $roboto-medium;
+                margin-bottom: 15px;
+
+            }
+
+            .address,.time-stamp{
+                font-size: 14px;
+                margin-bottom: 15px;
+                span{
+                    font-weight: $roboto-medium;
+                }
+
+                
+            }
+
 
             input{
                 width: 75%;
+
+                &+ .write-review{
+                    white-space: nowrap;
+                    font-size: 12px;
+                    color: $blue;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
 
             // h4{
@@ -106,7 +134,7 @@
         }
 
         .modify {
-            width: 10%;
+            width: 15%;
 
             i {
                 cursor: pointer;
@@ -160,6 +188,17 @@
                     vertical-align: middle;
                     line-height: 25px;
                 }
+
+                .write-review{
+                    white-space: nowrap;
+                    font-size: 12px;
+                    color: $blue;
+                    cursor: pointer;
+                    text-decoration: underline;
+                
+                }
+
+
                 
             }
         }
