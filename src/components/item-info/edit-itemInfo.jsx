@@ -18,12 +18,19 @@ const EditItemInfo = ({ product, onEditStatusChanged, onEdit }) => {
             [key]: event.target.value
         }))
     }
+
+    const onDescriptionChange = (description) => {
+        setValues((value) => ({
+            ...value,
+            description
+        }))
+    }
     return (
         <ul className="info edit-product">
             <li className="image input-wrapper">
              <input placeholder='Enter URL' type="text" className="image-url" value={imgUrl} onChange={onChange('imgUrl')}/>
             </li>
-            <DescriptionInput value={name} onChange={onChange('name')}/>
+            <DescriptionInput value={name} onChange={onChange('name')} onDescriptionChange={onDescriptionChange}/>
             <QuantityInput  value={items} onChange={onChange('items')}/>
             <PriceInput  value={cost} onChange={onChange('cost')}/>
             <li className="modify">

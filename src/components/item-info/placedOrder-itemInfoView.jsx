@@ -49,7 +49,7 @@ const PlacedOrderItemInfo = ({ product }) => {
 
         else{
             toast(`Can't submit empty review`);
-            setShowReview(false);
+            setShowReview(true);
         }
        
     }

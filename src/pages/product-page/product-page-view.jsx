@@ -45,6 +45,7 @@ const ProductPageView = () => {
                <li className="product-description">
                     <h3>{productInfo.name}</h3>
                     <h4><span>Price - </span>&#8377;{productInfo.cost}</h4>
+                    {productInfo.description && <p><h4>Description </h4>{productInfo.description}</p>}
                     <button className={cx} onClick={syncWithCart}>{product ?'Remove from cart' : 'Add to cart'}</button>
                </li>
                <li className="product-reviews">
