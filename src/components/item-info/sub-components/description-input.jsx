@@ -2,7 +2,7 @@ import { ReviewModal } from 'components/review-modal'
 import React from 'react'
 import { toast } from 'react-toastify'
 
-const DescriptionInput = ({value, onChange, onDescriptionChange}) => {
+const DescriptionInput = ({value, onChange, onDescriptionChange, descriptionValue}) => {
     const [showModel, setShowModel] = React.useState(false)
 
     const onDescription = (review) => {
@@ -19,7 +19,7 @@ const DescriptionInput = ({value, onChange, onDescriptionChange}) => {
         <li className = "description input-wrapper">
             <input placeholder='Product Name'  type="text" value={value} onChange={onChange}/>
             <a className="write-review" onClick={() => setShowModel(true)}>Write Description</a>
-            {(showModel) && <ReviewModal onSubmit={onDescription}/>}
+            {(showModel) && <ReviewModal onSubmit={onDescription} initialValue={descriptionValue} />}
         </li>
     )
 }

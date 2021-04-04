@@ -1,8 +1,8 @@
 import React from 'react'
 import reviewService from 'js/review-service';
 
-const ReviewModalView = ({ onSubmit }) => {
-    const [review, setReview] = React.useState('')
+const ReviewModalView = ({ onSubmit, initialValue }) => {
+    const [review, setReview] = React.useState(initialValue || '')
     return (
         <div className="modal-wrapper">
             <div className="modal">

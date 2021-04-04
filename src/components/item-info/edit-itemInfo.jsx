@@ -11,7 +11,7 @@ const EditItemInfo = ({ product, onEditStatusChanged, onEdit }) => {
         setValues(product)
     }, [product])
     console.log(values)
-    const { imgUrl, name, items, cost } = values || {}
+    const { imgUrl, name, items, cost, description} = values || {}
     const onChange = (key) => (event) => {
         setValues((value) => ({
             ...value,
@@ -30,7 +30,7 @@ const EditItemInfo = ({ product, onEditStatusChanged, onEdit }) => {
             <li className="image input-wrapper">
              <input placeholder='Enter URL' type="text" className="image-url" value={imgUrl} onChange={onChange('imgUrl')}/>
             </li>
-            <DescriptionInput value={name} onChange={onChange('name')} onDescriptionChange={onDescriptionChange}/>
+            <DescriptionInput value={name} onChange={onChange('name')} onDescriptionChange={onDescriptionChange} descriptionValue={description}/>
             <QuantityInput  value={items} onChange={onChange('items')}/>
             <PriceInput  value={cost} onChange={onChange('cost')}/>
             <li className="modify">
