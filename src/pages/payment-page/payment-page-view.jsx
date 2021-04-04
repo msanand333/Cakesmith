@@ -38,7 +38,7 @@ const PaymentPageView = () => {
                     setAddress={setAddress} 
                     setZip={setZip} 
                     onNext={() => {
-                        if(checkInventory(products)){
+                        if(checkInventory(products) && address && zip){
                             setPage(2)
                         }
                     }} />}

@@ -16,6 +16,7 @@ class OrderService {
     return {
       total: orderInfo.total,
       status: ORDER_STATUS.PLACED,
+      time:new Date(),
       archived: false,
       placedUserId,
       userName,
@@ -47,9 +48,9 @@ class OrderService {
     const query = filters.reduce((q, filter) => q.where(...filter), ref().orders) 
     const snap = await query.get()
     const orders = snap.docs.reduce((pre ,order) => {
-        let {products, status} = order.data()
+        let {products, status,address,time} = order.data()
         const orderId = order.id
-        products = products.map((product) => ({...product, status, orderId}))
+        products = products.map((product) => ({...product, status, orderId, address, time}))
         return [...pre, ...products]
     }, [])
     return orders

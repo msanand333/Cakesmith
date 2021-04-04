@@ -9,10 +9,17 @@ const ReceivedOrderItemInfo = ({ product, onStatusChange }) => {
     const [isRejected, setIsRejected] = useState(rejectedDefault)
     const deliveredDefault = product.status === ORDER_STATUS.DELIVERED
     const [isDelivered, setIsDelivered] = useState(deliveredDefault)
+    console.log(product.time)
+
+    function convertFirebaseTimeStampToString(firebaseTimeStamp) {
+        if (firebaseTimeStamp)
+          return new Date(firebaseTimeStamp.seconds * 1000).toLocaleString('en-IN')
+        return 'NA'
+      }
     return (
         <ul className="info">
             <Img src={product.imgUrl}/>
-            <Description text={product.name}/>
+            <Description text={product.name} address={product.address} time={ product.time ? convertFirebaseTimeStampToString(product.time): ''}/>
             <li className="quantity">{product.quantity}</li>
             <li className="price">
                 &#8377;{product.total}
