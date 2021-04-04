@@ -21,11 +21,11 @@ const EditItemInfo = ({ product, onEditStatusChanged, onEdit }) => {
     return (
         <ul className="info edit-product">
             <li className="image input-wrapper">
-             <input type="text" className="image-url" value={imgUrl} onChange={onChange('imgUrl')}/>
+             <input placeholder='Enter URL' type="text" className="image-url" value={imgUrl} onChange={onChange('imgUrl')}/>
             </li>
             <DescriptionInput value={name} onChange={onChange('name')}/>
-            <QuantityInput value={items} onChange={onChange('items')}/>
-            <PriceInput value={cost} onChange={onChange('cost')}/>
+            <QuantityInput  value={items} onChange={onChange('items')}/>
+            <PriceInput  value={cost} onChange={onChange('cost')}/>
             <li className="modify">
                 <button className="btn-secondary" onClick={async () => {
                     const updatedVal = await onEdit(values)

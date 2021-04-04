@@ -26,6 +26,11 @@
                 visibility: visible;
             }
         }
+
+        &::placeholder{
+            font-size: 14px;
+            color: $darkGrey;
+        }
     }
 
     .error-msg {

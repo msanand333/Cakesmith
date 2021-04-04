@@ -33,16 +33,7 @@ const HomePageView = () => {
             <section className="about">
                 <div className="container">
                     <h3>About</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Adipisci autem saepe qui, praesentium,
-                    labore similique natus nostrum temporibus deserunt
-                    repellat blanditiis minus quia laboriosam? Possimus
-                    corporis corrupti maiores earum libero?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Similique quaerat magni odio sapiente placeat commodi
-                    voluptates quibusdam animi minima, dicta alias quidem
-                    repellat cum ut distinctio aspernatur excepturi
-                    itaque quasi.</p>
+                    <p>Just Cakes Bakery is a cakes cum pastry kitchen established in 2017 to bring the  taste of Vegan and Eggless Cakes to Kolkata. The bakery currently operates as a home kitchen from Howrah and plans on expanding to multiple locations across Kolkata. Today the pastry kitchen has turned into an exceedingly celebrated and famous brand with over 4 stars rating on Zomato.One of the key factors in Just Cakes Bakery’s prosperity has been its ethos that cakes taste best when they’ve been naturally heated utilizing the very same fixings and methods as those utilized in home preparing.</p>
                 </div>
             </section>
         </main>
