@@ -5,12 +5,19 @@ import { ReactComponent as FailureIcon } from '../../assets/images/svg/payment-f
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useCartContext } from 'context/cart-context';
 
 const PaymentAck = () => {
 
     const [isPaymentSuccessful, setIsPaymentSuccessful] = useState(true)
+
+    const { resetCart } = useCartContext()
     const history = useHistory()
 
+    useEffect(() => {
+        resetCart()
+    }, [])
+    
     useEffect(() => {
         const timeId = setTimeout(() => {
             history.push('/profile')

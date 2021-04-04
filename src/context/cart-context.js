@@ -77,7 +77,11 @@ const useCart = () => {
     setTotal(total)
   }, [products])
 
-  return {products, updateQuantity, addToCart, removeFromCart, total}
+  const resetCart = () => {
+    setProducts([ ]);
+  }
+
+  return {products, updateQuantity, addToCart, removeFromCart, total, resetCart}
 }
 
 
