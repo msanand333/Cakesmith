@@ -19,7 +19,7 @@ const DescriptionInput = ({value, onChange, onDescriptionChange, descriptionValu
         <li className = "description input-wrapper">
             <input placeholder='Product Name'  type="text" value={value} onChange={onChange}/>
             <a className="write-review" onClick={() => setShowModel(true)}>Write Description</a>
-            {(showModel) && <ReviewModal onSubmit={onDescription} initialValue={descriptionValue} />}
+            {(showModel) && <ReviewModal title="Description" onSubmit={onDescription} initialValue={descriptionValue} onBack={() => setShowModel(false)} />}
         </li>
     )
 }

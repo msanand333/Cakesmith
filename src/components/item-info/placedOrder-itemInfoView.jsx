@@ -71,7 +71,7 @@ const PlacedOrderItemInfo = ({ product }) => {
                         setShowReview(true)
                     }}>Write Review</a>
             </li>
-            {(showReview) && <ReviewModal onSubmit={onSubmitReview}/>}
+            {(showReview) && <ReviewModal title="Write Review" onSubmit={onSubmitReview} onBack={() => setShowReview(false)}/>}
         </ul>
     )
 }
